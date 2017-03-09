@@ -38,6 +38,21 @@ class PokerTests(unittest.TestCase):
 
 		self.assertEqual(res, "HIGH CARD: Ace of Spades")
 
+
+	def test_method_hank_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_AH(self):
+		hand = Hand("2C 3H 4S 8C AH")
+
+		res = hand.rank()
+
+		self.assertEqual(res, "HIGH CARD: Ace of Hearts")
+
+	def test_method_hank_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_KC(self):
+		hand = Hand("2C 3H 4S 8C KC")
+
+		res = hand.rank()
+
+		self.assertEqual(res, "HIGH CARD: King of Clubs")
+
 if __name__ == '__main__':
     unittest.main()
 
