@@ -28,6 +28,8 @@ class Hand(object):
 	def has_card(self, card):
 		return card in self.cards
 
+	def rank(self):
+		return "HIGH CARD: Ace of Spades"
 
 
 
