@@ -7,6 +7,8 @@ class UnknownValue(Exception):
 
 
 class Hand(object):
+	_values = set(['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'])
+
 	def __init__(self, hand):
 		self.cards = hand.split()
 
@@ -21,7 +23,7 @@ class Hand(object):
 				suit = card[1]
 			if suit != 'S' and suit != 'H' and suit != 'D' and suit != 'C':
 				raise UnknownSuit
-			if value != '2' and value != '3' and value != '4' and value != '8' and value != 'K' and value != 'A':
+			if not (value in self._values):
 				raise UnknownValue
 
 		if self.cards[-1] == "AH":
