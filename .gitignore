@@ -39,3 +39,14 @@ jspm_packages
 .node_repl_history
 
 homework/poker/__pycache__/*
+homework/poker/poker.pyc
+
+TDDNewDomain.creator
+TDDNewDomain.files
+TDDNewDomain.config  
+TDDNewDomain.includes
+
+/TDDNewDomain.config
+/TDDNewDomain.creator
+/TDDNewDomain.files
+/TDDNewDomain.includes

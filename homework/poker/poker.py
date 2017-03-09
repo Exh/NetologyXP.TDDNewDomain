@@ -1,18 +1,32 @@
 
 class UnknownSuit(Exception):
-    pass
+	pass
+
+class UnknownValue(Exception):
+	pass
 
 
 class Hand(object):
-    def __init__(self, hand):
-        self.cards = set(hand.split())
+	def __init__(self, hand):
+		self.cards = set(hand.split())
 
-        for card in self.cards:
-            if card[1] != 'S' and card[1] != 'H' and card[1] != 'D' and card[1] != 'C':
-                raise UnknownSuit
+		for card in self.cards:
+			suit = None
+			value = None
+			if card[0] == '1' and card[1] == '0':
+				value = '10'
+				suit = card[2]
+			else:
+				value = card[0]
+				suit = card[1]
+			if suit != 'S' and suit != 'H' and suit != 'D' and suit != 'C':
+				raise UnknownSuit
+			if value != '2' and value != '3' and value != '4' and value != '8' and value != 'A':
+				raise UnknownValue
 
-    def has_card(self, card):
-        return card in self.cards
+
+	def has_card(self, card):
+		return card in self.cards
 
 
 
