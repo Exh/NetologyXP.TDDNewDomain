@@ -81,6 +81,13 @@ class PokerTests(unittest.TestCase):
 
 		self.assertEqual(res, "PAIR: 8S 8C")
 
+	def test_method_hand_rank_return_pair_rank_if_hand_contain_2C_3S_8C_8S_JS(self):
+		hand = Hand("2C 3S 8C 8S JS")
+
+		res = hand.rank()
+
+		self.assertEqual(res, "PAIR: 8C 8S")
+
 if __name__ == '__main__':
     unittest.main()
 
