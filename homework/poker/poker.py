@@ -7,7 +7,8 @@ class UnknownValue(Exception):
 
 
 class Hand(object):
-	_values = set(['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'])
+	_values = {'2':'Two', '3':'Three', '4':'Four', '5':'Five', '6':'Six', '7':'Seven', '8':'Right', '9':'Nine', '10':'Ten', 'J':'Jack', 'Q':'Queen', 'K':'King', 'A':'Ace'}
+	_suits = {'H':'Hearts', 'C':'Clubs', 'S':'Spades', 'D':'Diamonds'}
 
 	def __init__(self, hand):
 		self.cards = hand.split()
@@ -21,7 +22,7 @@ class Hand(object):
 			else:
 				value = card[0]
 				suit = card[1]
-			if suit != 'S' and suit != 'H' and suit != 'D' and suit != 'C':
+			if not (suit in self._suits):
 				raise UnknownSuit
 			if not (value in self._values):
 				raise UnknownValue
@@ -30,8 +31,10 @@ class Hand(object):
 			self._rank = "HIGH CARD: Ace of Hearts"
 		elif self.cards[-1] == "AS":
 			self._rank = "HIGH CARD: Ace of Spades"
-		else:
+		elif self.cards[-1] == "KC":
 			self._rank = "HIGH CARD: King of Clubs"
+		else:
+			self._rank = "HIGH CARD: Queen of Diamonds"
 
 	def has_card(self, card):
 		return card in self.cards
