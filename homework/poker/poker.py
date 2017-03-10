@@ -14,30 +14,49 @@ class Hand(object):
 		self.cards = hand.split()
 
 		for card in self.cards:
-			suit = None
-			value = None
-			if card[0] == '1' and card[1] == '0':
-				value = '10'
-				suit = card[2]
-			else:
-				value = card[0]
-				suit = card[1]
-			if not (suit in self._suits):
-				raise UnknownSuit
-			if not (value in self._values):
-				raise UnknownValue
+			ex_res = Hand.extract_value_suit(card)
+			value = ex_res[0]
+			suit = ex_res[1]
 
-		if self.cards[-1] == "AH":
-			self._rank = "HIGH CARD: Ace of Hearts"
-		elif self.cards[-1] == "AS":
-			self._rank = "HIGH CARD: Ace of Spades"
-		elif self.cards[-1] == "KC":
-			self._rank = "HIGH CARD: King of Clubs"
-		else:
-			self._rank = "HIGH CARD: Queen of Diamonds"
+		high_card = self.cards[-1];
+		self._rank = "HIGH CARD: " + Hand.card_string(high_card)
+
+		#if self.cards[-1] == "AH":
+			#self._rank = "HIGH CARD: Ace of Hearts"
+		#elif self.cards[-1] == "AS":
+			#self._rank = "HIGH CARD: Ace of Spades"
+		#elif self.cards[-1] == "KC":
+			#self._rank = "HIGH CARD: King of Clubs"
+		#else:
+			#self._rank = "HIGH CARD: Queen of Diamonds"
 
 	def has_card(self, card):
 		return card in self.cards
+
+	@staticmethod
+	def extract_value_suit(card):
+		suit = None
+		value = None
+		if card[0] == '1' and card[1] == '0':
+			value = '10'
+			suit = card[2]
+		else:
+			value = card[0]
+			suit = card[1]
+
+		if not (suit in Hand._suits):
+			raise UnknownSuit
+		if not (value in Hand._values):
+			raise UnknownValue
+
+		return (value, suit)
+
+	@staticmethod
+	def card_string(card):
+		temp = Hand.extract_value_suit(card)
+		value = Hand._values[temp[0]]
+		suit  =	Hand._suits[temp[1]]
+		return value + " of " + suit
 
 	def rank(self):
 		return self._rank
