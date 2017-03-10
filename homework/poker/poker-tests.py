@@ -31,7 +31,7 @@ class PokerTests(unittest.TestCase):
 		self.assertEqual(res, True)
 
 
-	def test_method_hank_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_AS(self):
+	def test_method_hand_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_AS(self):
 		hand = Hand("2C 3H 4S 8C AS")
 
 		res = hand.rank()
@@ -39,33 +39,47 @@ class PokerTests(unittest.TestCase):
 		self.assertEqual(res, "HIGH CARD: Ace of Spades")
 
 
-	def test_method_hank_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_AH(self):
+	def test_method_hand_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_AH(self):
 		hand = Hand("2C 3H 4S 8C AH")
 
 		res = hand.rank()
 
 		self.assertEqual(res, "HIGH CARD: Ace of Hearts")
 
-	def test_method_hank_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_KC(self):
+	def test_method_hand_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_KC(self):
 		hand = Hand("2C 3H 4S 8C KC")
 
 		res = hand.rank()
 
 		self.assertEqual(res, "HIGH CARD: King of Clubs")
 
-	def test_method_hank_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_QD(self):
+	def test_method_hand_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_QD(self):
 		hand = Hand("2C 3H 4S 8C QD")
 
 		res = hand.rank()
 
 		self.assertEqual(res, "HIGH CARD: Queen of Diamonds")
 
-	def test_method_hank_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_JS(self):
+	def test_method_hand_rank_return_high_card_rank_if_hand_contain_2C_3H_4S_8C_JS(self):
 		hand = Hand("2C 3H 4S 8C JS")
 
 		res = hand.rank()
 
 		self.assertEqual(res, "HIGH CARD: Jack of Spades")
+
+	def test_method_hand_rank_return_pair_rank_if_hand_contain_2C_2S_4S_8C_JS(self):
+		hand = Hand("2C 2S 4S 8C JS")
+
+		res = hand.rank()
+
+		self.assertEqual(res, "PAIR: 2C 2S")
+
+	def test_method_hand_rank_return_pair_rank_if_hand_contain_2C_3S_8S_8C_JS(self):
+		hand = Hand("2C 3S 8S 8C JS")
+
+		res = hand.rank()
+
+		self.assertEqual(res, "PAIR: 8S 8C")
 
 if __name__ == '__main__':
     unittest.main()

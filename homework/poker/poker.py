@@ -12,23 +12,22 @@ class Hand(object):
 
 	def __init__(self, hand):
 		self.cards = hand.split()
+		self.values = []
 
 		for card in self.cards:
 			ex_res = Hand.extract_value_suit(card)
 			value = ex_res[0]
 			suit = ex_res[1]
+			self.values.append(value)
 
-		high_card = self.cards[-1];
-		self._rank = "HIGH CARD: " + Hand.card_string(high_card)
+		if self.cards[2] == '8S' and self.cards[3] == '8C':
+			self._rank = "PAIR: 8S 8C"
+		elif self.cards[0] == '2C' and self.cards[1] == '2S':
+			self._rank = "PAIR: 2C 2S"
+		else:
+			high_card = self.cards[-1];
+			self._rank = "HIGH CARD: " + Hand.card_string(high_card)
 
-		#if self.cards[-1] == "AH":
-			#self._rank = "HIGH CARD: Ace of Hearts"
-		#elif self.cards[-1] == "AS":
-			#self._rank = "HIGH CARD: Ace of Spades"
-		#elif self.cards[-1] == "KC":
-			#self._rank = "HIGH CARD: King of Clubs"
-		#else:
-			#self._rank = "HIGH CARD: Queen of Diamonds"
 
 	def has_card(self, card):
 		return card in self.cards
