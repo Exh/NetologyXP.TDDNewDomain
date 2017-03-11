@@ -125,16 +125,22 @@ suite('converter arabic numerals', function () {
         assert.equal(res, 'XLIX')
     });
 
-    test('when input 49 return XLIX', function() {
-        res = converter.arabicToRoman(49);
+    test('when input 90 return XC', function() {
+        res = converter.arabicToRoman(90);
 
-        assert.equal(res, 'XLIX')
+        assert.equal(res, 'XC')
     });
 
     test('when input 100 return C', function() {
         res = converter.arabicToRoman(100);
 
         assert.equal(res, 'C')
+    });
+
+    test('when input 300 return CCC', function() {
+        res = converter.arabicToRoman(300);
+
+        assert.equal(res, 'CCC')
     });
 
 });
