@@ -58,5 +58,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'VIII')
     });
+
+    test('when input 10 return X', function() {
+        res = converter.araWbicToRoman(10);
+
+        assert.equal(res, 'X')
+    });
 });
 
