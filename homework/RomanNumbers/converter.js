@@ -2,12 +2,28 @@
 
 class Converter
 {
+    evaluateNum(arabic, roman, n)
+    {
+        if (n > arabic)
+            return this.arabicToRoman(arabic) + this.arabicToRoman(n - arabic);
+        else if (n == arabic)
+            return roman;
+        return "";
+    }
+
     arabicToRoman(n)
     {
-        if (n > 500)
-            return this.arabicToRoman(500) + this.arabicToRoman(n - 500);
-        else if (n == 500)
-            return "D";
+        // if (n > 500)
+        //     return this.arabicToRoman(500) + this.arabicToRoman(n - 500);
+        // else if (n == 500)
+        //     return "D";
+        var res = this.evaluateNum(1000, "M", n);
+        if (res) return res;
+        var res = this.evaluateNum(900, "CM", n);
+        if (res) return res;
+        var res = this.evaluateNum(500, "D", n);
+        if (res) return res;
+
         if (n > 400)
             return this.arabicToRoman(400) + this.arabicToRoman(n - 400);
         else if (n == 400)

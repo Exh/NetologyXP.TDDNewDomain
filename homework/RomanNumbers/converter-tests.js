@@ -165,5 +165,17 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'CDXCIX')
     });
+
+    test('when input 1000 return M', function() {
+        res = converter.arabicToRoman(1000);
+
+        assert.equal(res, 'M')
+    });
+
+    test('when input 900 return CM', function() {
+        res = converter.arabicToRoman(900);
+
+        assert.equal(res, 'CM')
+    });
 });
 
