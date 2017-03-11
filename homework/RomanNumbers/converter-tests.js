@@ -71,5 +71,10 @@ suite('converter arabic numerals', function () {
         assert.equal(res, 'IX')
     });
 
+    test('when input 11 return XI', function() {
+        res = converter.arabicToRoman(11);
+
+        assert.equal(res, 'XI')
+    });
 });
 
