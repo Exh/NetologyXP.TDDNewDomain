@@ -4,10 +4,20 @@ class Converter
 {
     arabicToRoman(n)
     {
+        if (n > 500)
+            return this.arabicToRoman(500) + this.arabicToRoman(n - 500);
+        else if (n == 500)
+            return "D";
+        if (n > 400)
+            return this.arabicToRoman(400) + this.arabicToRoman(n - 400);
+        else if (n == 400)
+            return "CD";
         if (n > 100)
             return this.arabicToRoman(100) + this.arabicToRoman(n - 100);
         else if (n == 100)
             return "C";
+        else if (n > 90)
+            return  this.arabicToRoman(90) + this.arabicToRoman(n - 90);
         else if (n == 90)
             return "XC";
         else if (n == 50)

@@ -131,6 +131,12 @@ suite('converter arabic numerals', function () {
         assert.equal(res, 'XC')
     });
 
+    test('when input 99 return XCIX', function() {
+        res = converter.arabicToRoman(99);
+
+        assert.equal(res, 'XCIX')
+    });
+
     test('when input 100 return C', function() {
         res = converter.arabicToRoman(100);
 
@@ -143,5 +149,21 @@ suite('converter arabic numerals', function () {
         assert.equal(res, 'CCC')
     });
 
+    test('when input 500 return D', function() {
+        res = converter.arabicToRoman(500);
+
+        assert.equal(res, 'D')
+    });
+
+    test('when input 400 return CD', function() {
+        res = converter.arabicToRoman(400);
+
+        assert.equal(res, 'CD')
+    });
+    test('when input 499 return CDXCIX', function() {
+        res = converter.arabicToRoman(499);
+
+        assert.equal(res, 'CDXCIX')
+    });
 });
 
