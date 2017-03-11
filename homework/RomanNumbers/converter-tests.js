@@ -60,7 +60,7 @@ suite('converter arabic numerals', function () {
     });
 
     test('when input 10 return X', function() {
-        res = converter.araWbicToRoman(10);
+        res = converter.arabicToRoman(10);
 
         assert.equal(res, 'X')
     });
