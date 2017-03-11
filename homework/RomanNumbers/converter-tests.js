@@ -40,5 +40,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'IV')
     });
+
+    test('when input 6 return IV', function() {
+        res = converter.arabicToRoman(6);
+
+        assert.equal(res, 'VI')
+    });
 });
 
