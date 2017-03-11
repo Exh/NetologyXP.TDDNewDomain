@@ -106,5 +106,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'L')
     });
+
+    test('when input 40 return XL', function() {
+        res = converter.arabicToRoman(40);
+
+        assert.equal(res, 'XL')
+    });
 });
 
