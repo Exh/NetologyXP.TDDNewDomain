@@ -5,20 +5,28 @@ var Converter = require('./converter');
 
 suite('converter arabic numerals', function () {
 
-    test('when input 1 return I', function(){
-        converter = new Converter();
+    let converter = {};
 
+    setup(function () {
+        converter = new Converter();
+    });
+
+    test('when input 1 return I', function(){
         res = converter.arabicToRoman(1);
 
         assert.equal(res, 'I')
     });
 
     test('when input 2 return II', function(){
-        converter = new Converter();
-
         res = converter.arabicToRoman(2);
 
         assert.equal(res, 'II')
+    });
+
+    test('when input 3 return III', function() {
+        res = converter.arabicToRoman(3);
+
+        assert.equal(res, 'III')
     });
 });
 
