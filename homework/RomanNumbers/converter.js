@@ -4,7 +4,9 @@ class Converter
 {
     arabicToRoman(n)
     {
-        if (n > 10)
+        if (n == 50)
+            return "L";
+        else if (n > 10)
             return this.arabicToRoman(10) + this.arabicToRoman(n - 10);
         else if (n == 10)
             return "X";

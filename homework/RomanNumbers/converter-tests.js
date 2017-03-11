@@ -100,5 +100,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'XIX')
     });
+
+    test('when input 50 return L', function() {
+        res = converter.arabicToRoman(50);
+
+        assert.equal(res, 'L')
+    });
 });
 
