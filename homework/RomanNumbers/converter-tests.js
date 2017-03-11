@@ -183,5 +183,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'CMXCIX')
     });
+
+    test('when input 1999 return MCMXCIX', function() {
+        res = converter.arabicToRoman(1999);
+
+        assert.equal(res, 'MCMXCIX')
+    });
 });
 
