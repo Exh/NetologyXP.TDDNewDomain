@@ -177,5 +177,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'CM')
     });
+
+    test('when input 999 return CMXCIX', function() {
+        res = converter.arabicToRoman(999);
+
+        assert.equal(res, 'CMXCIX')
+    });
 });
 
