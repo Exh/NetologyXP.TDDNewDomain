@@ -4,7 +4,11 @@ class Converter
 {
     arabicToRoman(n)
     {
-        return "I"
+        if (n == 1)
+            return "I";
+        else if (n == 2 )
+            return "II";
+
     }
 }
 
