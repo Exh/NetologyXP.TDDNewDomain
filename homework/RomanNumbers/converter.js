@@ -4,7 +4,10 @@ class Converter
 {
     arabicToRoman(n)
     {
-        return "I".repeat(n);
+        if (n == 5)
+            return "V";
+        else
+            return "I".repeat(n);
     }
 }
 

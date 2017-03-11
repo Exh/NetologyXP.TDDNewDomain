@@ -28,5 +28,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'III')
     });
+
+    test('when input 5 return V', function() {
+        res = converter.arabicToRoman(5);
+
+        assert.equal(res, 'V')
+    });
 });
 
