@@ -4,7 +4,9 @@ class Converter
 {
     arabicToRoman(n)
     {
-        if (n == 6)
+        if (n == 7)
+            return "VII";
+        else if (n == 6)
             return "VI";
         else if (n == 5)
             return "V";

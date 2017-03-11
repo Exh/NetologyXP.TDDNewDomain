@@ -46,5 +46,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'VI')
     });
+
+    test('when input 7 return VII', function() {
+        res = converter.arabicToRoman(7);
+
+        assert.equal(res, 'VII')
+    });
 });
 
