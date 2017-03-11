@@ -41,7 +41,7 @@ suite('converter arabic numerals', function () {
         assert.equal(res, 'IV')
     });
 
-    test('when input 6 return IV', function() {
+    test('when input 6 return VI', function() {
         res = converter.arabicToRoman(6);
 
         assert.equal(res, 'VI')
