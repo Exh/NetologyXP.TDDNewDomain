@@ -82,5 +82,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'XVIII')
     });
+
+    test('when input 14 return XIV', function() {
+        res = converter.arabicToRoman(14);
+
+        assert.equal(res, 'XIV')
+    });
 });
 
