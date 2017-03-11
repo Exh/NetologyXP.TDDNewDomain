@@ -6,6 +6,8 @@ class Converter
     {
         if (n == 50)
             return "L";
+        else if (n > 40)
+            return this.arabicToRoman(40) + this.arabicToRoman(n - 40);
         else if (n == 40)
             return "XL";
         else if (n > 10)

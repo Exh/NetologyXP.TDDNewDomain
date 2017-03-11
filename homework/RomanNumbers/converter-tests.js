@@ -112,5 +112,17 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'XL')
     });
+
+    test('when input 41 return XLI', function() {
+        res = converter.arabicToRoman(41);
+
+        assert.equal(res, 'XLI')
+    });
+
+    test('when input 49 return XLIX', function() {
+        res = converter.arabicToRoman(49);
+
+        assert.equal(res, 'XLIX')
+    });
 });
 
