@@ -124,5 +124,18 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'XLIX')
     });
+
+    test('when input 49 return XLIX', function() {
+        res = converter.arabicToRoman(49);
+
+        assert.equal(res, 'XLIX')
+    });
+
+    test('when input 100 return C', function() {
+        res = converter.arabicToRoman(100);
+
+        assert.equal(res, 'C')
+    });
+
 });
 
