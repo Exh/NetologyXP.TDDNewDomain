@@ -76,5 +76,11 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'XI')
     });
+
+    test('when input 18 return XVIII', function() {
+        res = converter.arabicToRoman(18);
+
+        assert.equal(res, 'XVIII')
+    });
 });
 
