@@ -88,5 +88,17 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'XIV')
     });
+
+    test('when input 20 return XX', function() {
+        res = converter.arabicToRoman(20);
+
+        assert.equal(res, 'XX')
+    });
+
+    test('when input 19 return XIX', function() {
+        res = converter.arabicToRoman(19);
+
+        assert.equal(res, 'XIX')
+    });
 });
 
