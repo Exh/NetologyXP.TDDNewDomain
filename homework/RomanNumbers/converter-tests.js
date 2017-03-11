@@ -64,5 +64,12 @@ suite('converter arabic numerals', function () {
 
         assert.equal(res, 'X')
     });
+
+    test('when input 9 return IX', function() {
+        res = converter.arabicToRoman(9);
+
+        assert.equal(res, 'IX')
+    });
+
 });
 
